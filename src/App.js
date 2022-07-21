@@ -15,6 +15,7 @@ function App() {
       setCitySearch('');
       setCityInfo(response.data[0])
       console.log(response.data)});
+      console.log("fetchcity called");
   }
 
   return (
