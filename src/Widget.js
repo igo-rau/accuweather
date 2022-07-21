@@ -3,14 +3,13 @@ import { useEffect, useState } from 'react';
 
 
 const Widget = ({cityInfo}) => {
-    console.log("Widget called. Cityinfo:");
-    console.log(cityInfo);
-
-    const [conditions, setConditions]=useState();
-   
+    
+    const [conditions, setConditions]=useState(null);
+    
     useEffect(() => {
-        setConditions(null);
-        axios.get(`http://dataservice.accuweather.com/currentconditions/v1/${cityInfo.Key}?apikey=8LYjRmrxFnGAGVTSE4qQnc7XxhnO45t9`)
+        console.log("Widget called. Cityinfo:");
+        console.log(cityInfo);
+        axios.get(`https://dataservice.accuweather.com/currentconditions/v1/${cityInfo.Key}?apikey=8LYjRmrxFnGAGVTSE4qQnc7XxhnO45t9`)
         .then((response)=>{
             setConditions(response.data[0]);
         })

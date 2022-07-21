@@ -10,10 +10,10 @@ function App() {
 
   const fetchCity=(e)=> {
     e.preventDefault();
-    axios.get(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=8LYjRmrxFnGAGVTSE4qQnc7XxhnO45t9&q=${citySearch}`)
+    axios.get(`https://dataservice.accuweather.com/locations/v1/cities/search?apikey=8LYjRmrxFnGAGVTSE4qQnc7XxhnO45t9&q=${citySearch}`)
     .then ((response)=>{
       setCitySearch('');
-      setCityInfo(response.data[0])
+      setCityInfo(response.data[0]);
       console.log(response.data)});
       console.log("fetchcity called");
   }
