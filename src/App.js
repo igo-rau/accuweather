@@ -22,33 +22,34 @@ function App() {
 
   return (
     <>
-    <header>
-    </header>
-    <main>
-      <div className="App">
-        <h1>Integrify assignment July 2022 - Accuweather</h1>
-        <form onSubmit={fetchCity}>
-          <label htmlFor="cityInput">Enter the city name</label>
-          <input
-            required
-            placeholder="City name"
-            name="cityInput"
-            value={citySearch}
-            onChange={(e) => setCitySearch(e.target.value)}
-          ></input>
-          <button type="submit">Submit</button>
-        </form>
-        {/* Add "not found" option */}
-        {cityInfo && (
-          <div>
-            <Widget cityInfo={cityInfo} />
-          </div>
-        )}
-      </div>
-    </main>
-    <footer>
-      Copyright &copy; Igor Rautiainen <a href="https://github.com/igo-rau/accuweather">GitHub</a>
-    </footer> 
+      <header></header>
+      <main>
+        <div className="App">
+          <h1>Integrify assignment July 2022 - Accuweather</h1>
+          <form onSubmit={fetchCity}>
+            <label htmlFor="cityInput">Enter the city name</label>
+            <input
+              required
+              placeholder="City name"
+              id="cityInput"
+              value={citySearch}
+              onChange={(e) => setCitySearch(e.target.value)}
+            ></input>
+            <button type="submit">Submit</button>
+          </form>
+          {/* Add "not found" option */}
+          {cityInfo && (
+            <div>
+              <Widget cityInfo={cityInfo} />
+            </div>
+          )}
+        </div> 
+      </main>
+      <footer>
+        <p>Copyright &copy; Igor Rautiainen{" "}
+        <a href="https://github.com/igo-rau/accuweather">GitHub</a> </p>
+        <p style={{verticalAlign: "center"}}>Weather data provided by <a href="https://www.accuweather.com"> <img src="AW_REGISTERED_Horiz_Transparent_Logo.png" alt="Accuweather" height="14"></img> </a></p>
+      </footer>
     </>
   );
 }
