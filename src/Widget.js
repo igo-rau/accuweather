@@ -16,7 +16,7 @@ const Widget = ({ cityInfo }) => {
 
     axios
       .get(
-        `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${cityInfo.Key}?apikey=8LYjRmrxFnGAGVTSE4qQnc7XxhnO45t9&metric=true`
+        `https://dataservice.accuweather.com/forecasts/v1/daily/1day/${cityInfo.Key}?apikey=8LYjRmrxFnGAGVTSE4qQnc7XxhnO45t9&metric=true`
       )
       .then((response) => {
         setForecasts(response.data.DailyForecasts[0]);
