@@ -25,7 +25,7 @@ const Widget = ({ cityInfo }) => {
 
   function getIconName(iconNumber) {
     var weatherIconStr = String(iconNumber);
-    if (weatherIconStr.length == 1) {
+    if (weatherIconStr.length === 1) {
       weatherIconStr = "0" + weatherIconStr;
     }
     weatherIconStr += "-s.png";
