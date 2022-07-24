@@ -17,6 +17,7 @@ function App() {
       .then((response) => {
         setCitySearch("");
         setCityInfo(response.data[0]);
+        if(!response.data[0]) {alert("Sorry, information not available! Please try again!")};
       });
   };
 
