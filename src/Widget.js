@@ -14,6 +14,13 @@ const Widget = ({ cityInfo }) => {
       });
   }, [cityInfo]);
 
+  function getIconName(iconNumber) {
+    var weatherIconStr=String(iconNumber);
+    if (weatherIconStr.length==1) {weatherIconStr = "0" + weatherIconStr}
+    weatherIconStr+= "-s.png";
+    return weatherIconStr;
+  }
+
   return (
     <>
       {conditions && (
@@ -22,7 +29,7 @@ const Widget = ({ cityInfo }) => {
             Weather for {cityInfo.EnglishName}, {cityInfo.Country.EnglishName}:
           </p>
           <h3 className="city-country">
-            {cityInfo.EnglishName} {cityInfo.Country.EnglishName}
+            {cityInfo.EnglishName}, {cityInfo.Country.EnglishName}
           </h3>
           <div className="details">
             <h2 className="temperature-value">
@@ -31,7 +38,9 @@ const Widget = ({ cityInfo }) => {
                 &deg;{conditions.Temperature.Metric.Unit}
               </sup>
             </h2>
-            {/* {conditions.IsDayTime === true ? <img className="weather-img" src={sun} alt="sun" /> : <img className="weather-img" src={moon} alt="moon" />} */}
+            {/* /TODO: Refactor */}
+            <img className="weather-img" src={getIconName(conditions.WeatherIcon)} alt={conditions.WeatherText} width="75px" /> 
+
             <p className="weather-text">{conditions.WeatherText}</p>
           </div>
         </article>
