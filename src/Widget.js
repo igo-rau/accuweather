@@ -37,9 +37,9 @@ const Widget = ({ cityInfo }) => {
     <>
       {conditions && (
         <article className="current-conditions-box">
-          <h3 className="city-country">
+          <h2 className="city-country">
             {cityInfo.EnglishName}, {cityInfo.Country.EnglishName}:
-          </h3>
+          </h2>
           <h2>Current weather:</h2>
           <div className="details">
             <h2 className="temperature-value">
